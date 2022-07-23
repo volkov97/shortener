@@ -1,0 +1,3 @@
+```
+node script.js
+```
