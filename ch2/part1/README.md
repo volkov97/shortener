@@ -1,5 +1,5 @@
 ```
-node script.js 1
+node server.js
 
-LINKS_TYPE=prod node script.js 1
+NODE_ENV=production node server.js
 ```

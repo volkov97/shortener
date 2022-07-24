@@ -1,6 +1,5 @@
-[
-  "https://yandex.ru",
-  "https://ya.ru",
-  "https://music.yandex.ru",
-  "https://yandex.com/maps"
-]
+{
+  "music": "https://music.yandex.ru",
+  "map": "https://yandex.ru/maps/",
+  "tr": "https://translate.yandex.ru"
+}

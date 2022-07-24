@@ -1,5 +1,5 @@
 ```
 node script.js map
 
-LINKS_TYPE=prod node script.js map
+NODE_ENV=production node script.js map
 ```
