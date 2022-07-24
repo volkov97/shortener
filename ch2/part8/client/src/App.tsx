@@ -27,7 +27,7 @@ function App() {
   const toast = useToast();
 
   const onSubmit = useCallback(async (values: ShortenerInfo) => {
-    const response = await fetch("/alias", {
+    const response = await fetch("http://localhost:3000/alias", {
       method: "POST",
       headers: {
         Accept: "application/json",
