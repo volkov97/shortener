@@ -1,30 +1,18 @@
-const path = require("path");
-
 const express = require("express");
-const { createProxyMiddleware } = require("http-proxy-middleware");
 
 const { resolveAlias } = require("./controllers/resolveAlias");
 const { addAlias } = require("./controllers/addAlias");
 const { ping } = require("./controllers/ping");
 const { notFound } = require("./middlewares/notFound");
-const { urlLogger } = require("./middlewares/urlLogger");
 const { errorHandler } = require("./middlewares/errorHandler");
+const { accessLogs } = require("./middlewares/accessLogs");
 
 const app = express();
 
 app.use(express.json());
 
-app.use(
-  "/",
-  process.env.NODE_ENV
-    ? express.static(path.resolve(__dirname, "../client/dist"))
-    : createProxyMiddleware({
-        target: "http://localhost:3001",
-        changeOrigin: true,
-      })
-);
-
-app.use(urlLogger);
+app.use(accessLogs());
+app.use(accessLogs(true));
 
 app.get("/ping", ping);
 app.get("/:alias", resolveAlias);

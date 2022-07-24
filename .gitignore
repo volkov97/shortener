@@ -1,1 +1,3 @@
 node_modules
+access.logs
+**/db/dumps/*.gz
