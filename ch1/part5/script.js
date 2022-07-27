@@ -26,6 +26,11 @@ const server = http.createServer((request, response) => {
   const alias = request.url.slice(1);
 
   printLinkByAlias(alias).then((longLink) => {
+    if (!longLink) {
+      response.statusCode = 404;
+      return response.end('not-found');
+    }
+
     if (process.env.NODE_ENV === 'production') {
       response.setHeader('location', longLink);
       response.statusCode = 302;
