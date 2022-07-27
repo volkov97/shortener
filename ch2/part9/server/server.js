@@ -2,7 +2,6 @@ const path = require("path");
 const http = require('http');
 
 const express = require("express");
-const { createProxyMiddleware } = require("http-proxy-middleware");
 
 const { resolveAlias } = require("./controllers/resolveAlias");
 const { addAlias } = require("./controllers/addAlias");
